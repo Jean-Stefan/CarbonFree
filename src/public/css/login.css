@@ -1,0 +1,87 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../img/login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0px;
+    background-color: rgba(128, 128, 0, 0.5);
+}
+
+.login-info p {
+    color: #ffffff;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.login-box {
+    width: auto;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(240, 240, 240, 0.6);
+    border-radius: 3%;
+    color: rgb(68, 68, 2);
+}
+
+.login-box h4 {
+    font-size: 30px;
+}
+
+.login input {
+    height: 35px;
+}
+
+.email,
+.senha {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-button-container button {
+    width: 150px;
+    background-color: transparent;
+    color: rgb(68, 68, 2);
+    border-color: rgba(128, 128, 0, 1);
+    margin-bottom: 20px;
+}
+
+.login-button-container button:hover {
+    background-color: rgba(128, 128, 0, 1);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+.login-button-container a {
+    color: rgb(68, 68, 2);
+    margin-top: 20px;
+}
+
+.login-button-container a:hover {
+    filter: grayscale(100%);
+}
+
+@media screen and (max-width: 768px) {
+    .login-info img {
+        width: 250px;
+    }
+}

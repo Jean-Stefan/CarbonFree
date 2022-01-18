@@ -1,0 +1,84 @@
+<html lang='pt-br'>
+
+<head>
+	<meta charset='UTF-8' />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+	<link rel='stylesheet' type="text/css" href='/css/cadastro.css' />
+	<link rel='preconnect' href='https://fonts.googleapis.com' />
+	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+	<link href='https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500&display=swap'
+		rel='stylesheet' />
+	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'
+		integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous' />
+	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
+		integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
+		crossorigin='anonymous'></script>
+	<title>CarbonFree - Cadastro</title>
+</head>
+
+<body>
+	<div class='cadastro'>
+		<div class='col-lg-4 col-10 cadastro-info'>
+			<img src='../img/logo.png' alt='Logo CarbonFree' />
+			<p>
+				Sabemos da urgência em agir para limitar as emissões globais
+				de carbono. E acreditamos que se formos sozinhos, chegaremos
+				mais rápido, mas se queremos ir mais longe é necessário
+				irmos juntos! Acreditar que transformar é possível é o
+				primeiro passo para plantar um futuro mais justo e
+				sustentável para todas as pessoas. Proteger a biodiversidade
+				é um compromisso vitalício que precisamos ter, seja como
+				empresa, instituição ou pessoa.
+			</p>
+		</div>
+		<div class='col-lg-4 col-10'>
+			<form action='/auth/cadastro' method='POST' class='cadastro-box'>
+				<h4>Cadastro</h4>
+				<div class='nome'>
+					<label for='nome'>Nome</label>
+					<input type='text' name='nome' id="nome" required />
+				</div>
+				<div class='dtnasc'>
+					<label for='dtnasc'>Data de Nascimento</label>
+					<input type='date' name='dtnasc' id="dtnasc" required />
+				</div>
+				<div class='email'>
+					<label for='email'>E-mail</label>
+					<input type='email' name='email' id="email" required />
+				</div>
+				<div class='senha'>
+					<label for='senha'>Senha</label>
+					<input type='password' name='senha' id="senha" required min="8" max="20" />
+				</div>
+				<div class='senha'>
+					<label for='confirmar'>Confirmar Senha</label>
+					<input type='password' name='confirmar' id="confirmar" required min="8" max="20" />
+				</div>
+				<div class='nivel'>
+					<label for='nivel'>Você tenta minimizar o seu impacto
+						causado no meio ambiente?</label>
+					<select name='nivel' id='nivel' required>
+						<option value='1'>Não, mas quero começar.</option>
+						<option value='2'>
+							Sim, com atividades simples de realizar.
+						</option>
+						<option value='3'>
+							Sim, meu estilo de vida é baseado nisso.
+						</option>
+					</select>
+				</div>
+				<div class='cadastro-button-container'>
+					<button onclick="location.href = '/login';" class='btn'>Login</button>
+					<button type='submit' class='btn'>Cadastrar</button>
+				</div>
+			</form>
+			{{#if mensagem}}
+			<h6 class="alert alert-secondary mt-4">{{mensagem}}</h6>
+			{{/if}}
+		</div>
+
+	</div>
+</body>
+
+</html>

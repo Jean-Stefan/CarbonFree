@@ -1,0 +1,96 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../img/login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cadastro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+    background-color: rgba(128, 128, 0, 0.5);
+}
+
+.cadastro-info p {
+    color: #ffffff;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.cadastro-box {
+    width: auto;
+    height: auto;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(240, 240, 240, 0.6);
+    border-radius: 3%;
+    color: rgb(68, 68, 2);
+}
+
+.cadastro-box h4 {
+    font-size: 30px;
+}
+
+.email,
+.senha,
+.nome,
+.dtnasc,
+.nivel {
+    display: flex;
+    flex-direction: column;
+}
+
+.email input,
+.senha input,
+.nome input,
+.dtnasc input,
+.nivel select {
+    height: 35px;
+}
+
+.cadastro-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cadastro-button-container a {
+    color: rgb(68, 68, 2);
+}
+
+.cadastro-button-container a:hover {
+    filter: grayscale(100%);
+}
+
+.cadastro-button-container button {
+    width: 100px;
+    background-color: transparent;
+    border-color: rgba(128, 128, 0);
+    color: rgb(68, 68, 2);
+}
+
+.cadastro-button-container button:hover {
+    background-color: rgba(128, 128, 0, 1);
+    color: white;
+    transition: all 0.4s ease-out;
+}
+
+@media screen and (max-width: 995px) {
+    .cadastro {
+        flex-direction: column;
+    }
+
+    .cadastro-info img {
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+}

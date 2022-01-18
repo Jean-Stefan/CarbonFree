@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500&display=swap"
+		rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="/css/calculo.css" />
+	<link rel="stylesheet" type="text/css" href="/css/styles.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<title>CarbonFree - Calcular</title>
+</head>
+
+<body class="background-image">
+	<!-- Navegação -->
+	<nav class="navbar navbar-light">
+		<div class="container-fluid">
+			<img class="carbon-logo" src="../img/logo.png" alt="" />
+			<button class=" navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+				aria-controls="offcanvasNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+				aria-labelledby="offcanvasNavbarLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+						CarbonFree
+					</h5>
+					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+						aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/perfil">Perfil</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/sugestoes">Sugestão de
+								atividades</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/historico">Meus históricos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/auth/logout">Sair</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="main">
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="energia" role="tabpanel" aria-labelledby="energia-tab">
+
+			</div>
+			<div class="tab-pane fade" id="transporte" role="tabpanel" aria-labelledby="transporte-tab">
+
+			</div>
+			<div class="tab-pane fade" id="lixo" role="tabpanel" aria-labelledby="lixo-tab">
+
+			</div>
+		</div>
+		<div class="grid">
+			<form class="card-body" action="/calculo/resultado" method="post">
+				<div class="nav nav-tabs" id="nav-tab" role="tablist">
+					<button class="nav-link active" id="nav-energia-tab" data-bs-toggle="tab"
+						data-bs-target="#nav-energia" type="button" role="tab" aria-controls="nav-energia"
+						aria-selected="true">
+						Energia
+					</button>
+					<button class="nav-link" id="nav-transporte-tab" data-bs-toggle="tab"
+						data-bs-target="#nav-transporte" type="button" role="tab" aria-controls="nav-transporte"
+						aria-selected="false">
+						Transporte
+					</button>
+					<button class="nav-link" id="nav-lixo-tab" data-bs-toggle="tab" data-bs-target="#nav-lixo"
+						type="button" role="tab" aria-controls="nav-lixo" aria-selected="false">
+						Lixo
+					</button>
+				</div>
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade show active card transparency-white box" id="nav-energia" role="tabpanel"
+						aria-labelledby="nav-energia-tab">
+						<div class="mb-3">
+							<p>
+								Preencha os campos abaixo e calcule sua pegada de carbono:
+							</p>
+						</div>
+						<div class="mb-3">
+							<label for="input-tv" class="form-label">
+								Insira o tempo (em horas) que você assiste TV por
+								dia:</label>
+							<input type="number" class="form-control" id="input-tv" name="input_tv" required value="0"
+								min="0" max="24" />
+						</div>
+						<div class="mb-3">
+							<label for="input-celular" class="form-label">
+								Insira o tempo (em horas) que você utiliza o celular por
+								dia:
+							</label>
+							<input type="number" class="form-control" id="input-celular" name="input_celular" required
+								value="0" min="0" max="24" />
+						</div>
+						<div class="mb-3">
+							<label for="input-banho" class="form-label">
+								Insira o tempo (em minutos) do seu banho diário:
+							</label>
+							<input type="number" class="form-control" id="input-banho" name="input_banho" required
+								value="0" min="0" max="60" />
+						</div>
+						<div class="mb-3">
+							<label for="input-game" class="form-label">
+								Insira o tempo (em horas) que você joga videogame por dia:
+							</label>
+							<input type="number" class="form-control" id="input-game" name="input_game" required
+								value="0" min="0" max="24" />
+						</div>
+						<div class="mb-3">
+							<label for="input-computador" class="form-label">
+								Insira o tempo (em horas) que você utiliza o computador por
+								dia:
+							</label>
+							<input type="number" class="form-control" id="input-computador" name="input_computador"
+								required value="0" min="0" max="24" />
+						</div>
+						{{!-- <button type="submit" class="btn btn-primary">Calcular</button> --}}
+					</div>
+					<div class="tab-pane fade show card transparency-white box" id="nav-transporte" role="tabpanel"
+						aria-labelledby="nav-transporte-tab">
+						<div class="mb-3">
+							<p>
+								Preencha os campos abaixo e calcule sua pegada de carbono:
+							</p>
+						</div>
+						<div class="mb-3">
+							<label for="input_carro" class="form-label">
+								Insira a distância (em km) que você percorre por dia utilizando carro:</label>
+							<input type="number" class="form-control" id="input_carro" name="input_carro" required
+								value="0" min="0" />
+						</div>
+						<div class="mb-3">
+							<label for="input_moto" class="form-label">
+								Insira a distância (em km) que você percorre por dia utilizando moto:</label>
+							<input type="number" class="form-control" id="input_moto" name="input_moto" required
+								value="0" min='0' />
+						</div>
+						<div class="mb-3">
+							<label for="input_onibus" class="form-label">
+								Insira a distância (em km) que você percorre por dia utilizando ônibus:</label>
+							<input type="number" class="form-control" id="input_onibus" name="input_onibus" required
+								value="0" min='0' />
+						</div>
+						<div class="mb-3">
+							<label for="input_metro" class="form-label">
+								Insira a distância (em km) que você percorre por dia utilizando metrô:</label>
+							<input type="number" class="form-control" id="input_metro" name="input_metro" required
+								value="0" min='0' />
+						</div>
+					</div>
+					<div class="tab-pane fade show card transparency-white box" id="nav-lixo" role="tabpanel"
+						aria-labelledby="nav-lixo-tab">
+						<form action="/calculo/resultado" method="post" class="card-body">
+							<div class="mb-3">
+								<p>
+									Preencha os campos abaixo e calcule sua pegada de carbono:
+								</p>
+							</div>
+							<div class="mb-3">
+								<label for='input_lixo'>Você recicla seu lixo?</label>
+								<select name='input_lixo' id='input_lixo' required>
+									<option value='32'>Não reciclo.</option>
+									<option value='22'>
+										Sim, tento reciclar pelo menos metade do lixo gerado.
+									</option>
+									<option value='11'>
+										Sim, reciclo todo o lixo gerado.
+									</option>
+								</select>
+							</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Calcular</button>
+				</div>
+			</form>
+			<div class="card transparency-white coluna-resultado">
+				<div class="card-body d-flex">
+					<div class="box-resultado">
+						<h4 class="text-center">
+							Compare sua emissão de carbono com outros usuários
+						</h4>
+						<div class="seu-resultado">
+							<div class="d-flex justify-content-between">
+								<h5>Seu resultado:</h5>
+								<div>
+									<h5 id="perguntas-resultado-pegada">{{calculoUsuario}}</h5>
+								</div>
+							</div>
+						</div>
+						<div class="resultado-outros">
+							<div class="d-flex justify-content-between">
+								<h5>Média dos outros usuários:</h5>
+								<div>
+									<h5>{{mediaOutros}}</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
